@@ -11,7 +11,7 @@
 
 ### 1. Клонирование репозитория
 ```sh
-git clone https://github.com/yourusername/proxy-server.git
+git clone https://github.com/KailJ1/Proxy-Server.git
 cd proxy-server
 ```
 
