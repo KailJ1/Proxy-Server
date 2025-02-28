@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.0'  // Добавляем плагин для создания fat JAR
+}
+
+group = 'ru.KailJ'
+version = '1.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'io.netty', name: 'netty-all', version: '4.1.75.Final'
+    implementation group: 'io.netty', name: 'netty-transport', version: '4.1.75.Final'
+    implementation group: 'org.bouncycastle', name: 'bcpkix-jdk18on', version: '1.76'
+    implementation 'org.yaml:snakeyaml:2.0'
+}
+
+shadowJar {
+    manifest {
+        attributes(
+                'Main-Class': 'ru.KailJ.ProxyServer'
+        )
+    }
+}
